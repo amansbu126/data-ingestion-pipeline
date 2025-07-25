@@ -1,0 +1,33 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+.env/
+env/
+.venv/
+
+# Airflow specific
+airflow.db
+*.log
+logs/
+*.pid
+*.err
+*.sqlite
+
+# Jupyter Notebooks (if used later)
+.ipynb_checkpoints/
+
+# Secrets and credentials
+*.env
+config/*.env
+config/config.py  # if you're hardcoding creds (avoid this ideally)
+
+# VS Code settings
+.vscode/
+
+# macOS and Linux
+.DS_Store
+.idea/

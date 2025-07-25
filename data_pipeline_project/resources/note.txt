@@ -1,0 +1,6 @@
+ python -m venv .venv
+
+source .venv/Scripts/activate
+
+then set directory cd "C:\Users\Aman Kumar\OneDrive\2025\My-Learning\Python"
+-> run => python -m src.main.main

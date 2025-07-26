@@ -33,4 +33,4 @@ config/config.py  # if you're hardcoding creds (avoid this ideally)
 .idea/
 
 # Ignore config file with credentials
-resources/config.ini
+resources/config_file.ini

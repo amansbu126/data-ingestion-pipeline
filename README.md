@@ -108,29 +108,21 @@ Database connection strings
 ---
 
 ### 📂 Project Structure
+```text
 .
 ├── dags/
-|
 │   └── data_ingestion_dag.py      # Airflow DAG file
-|
 ├── data_uploads/
-|
 │   └── sample_data.json           # Sample raw data
-|
 ├── src/
 │   ├── config/
-|
 │   │   └── config.ini             # Credentials and settings
-|
 │   ├── s3_utils.py                # Upload & download functions using boto3
-|
 │   ├── transform.py               # JSON transformation logic
-|
 │   ├── db_handler.py              # DB connection and table handling logic
-|
 │   └── logger.py                  # Custom Python logger
-|
-├── README.md                      # You are here
+├── R
+```
 
 ---
 

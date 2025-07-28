@@ -14,11 +14,17 @@ This project demonstrates a **modular, object-oriented data pipeline** built usi
 
 ## 🛠️ Tech Stack
 Python (with OOP design)
+
 Apache Airflow
+
 AWS S3 (via boto3)
+
 PostgreSQL (hosted on Render)
+
 configparser for externalized credentials
+
 Logging module for traceability and monitoring
+
 Airflow UI for DAG scheduling and monitoring
 
 ---

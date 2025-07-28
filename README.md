@@ -121,7 +121,7 @@ Database connection strings
 │   ├── transform.py               # JSON transformation logic
 │   ├── db_handler.py              # DB connection and table handling logic
 │   └── logger.py                  # Custom Python logger
-├── R
+├── README.md                      # Documentation
 ```
 
 ---

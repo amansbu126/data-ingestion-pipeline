@@ -11,7 +11,7 @@ This project demonstrates a **modular, object-oriented data pipeline** built usi
 ```text
 Local JSON File ➜ S3 Bucket ➜ Data Transformation (Python) ➜ PostgreSQL DB (Render)
               ⬆                                          ⬇
-           Triggered & Orchestrated via Airflow DAG (with Logging & Monitoring)
+           Triggered & Orchestrated via Airflow DAG (with Logging & Monitoring)```
 
 ## 🛠️ Tech Stack
 Python (with OOP design)

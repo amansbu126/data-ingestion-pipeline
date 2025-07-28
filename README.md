@@ -13,7 +13,7 @@ Local JSON File ➜ S3 Bucket ➜ Data Transformation (Python) ➜ PostgreSQL DB
               ⬆                                          ⬇
            Triggered & Orchestrated via Airflow DAG (with Logging & Monitoring)
 
-🛠️ Tech Stack
+## 🛠️ Tech Stack
 Python (with OOP design)
 
 Apache Airflow
@@ -28,7 +28,7 @@ Logging module for traceability and monitoring
 
 Airflow UI for DAG scheduling and monitoring
 
-⚙️ Features
+###⚙️ Features
 ✅ Local file availability check
 ✅ Upload JSON file to AWS S3
 ✅ Read from S3 and flatten JSON using Python
@@ -86,9 +86,6 @@ Database connection strings
 
 
 📂 Project Structure
-bash
-Copy
-Edit
 .
 ├── dags/
 │   └── data_ingestion_dag.py      # Airflow DAG file
@@ -111,8 +108,6 @@ S3: Used as the intermediate cloud storage
 PostgreSQL: Free-tier database hosted on Render
 
 Local Machine: Source for JSON files simulating raw data arrival
-
-arrival
 
 📈 Future Enhancements
 Add unit tests and CI/CD integration

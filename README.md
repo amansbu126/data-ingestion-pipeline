@@ -8,6 +8,8 @@ This project demonstrates a **modular, object-oriented data pipeline** built usi
 
 ## 🚀 Architecture Flow
 
+<img width="2040" height="701" alt="diagram-export-28-07-2025-20_54_21" src="https://github.com/user-attachments/assets/d5956a58-a223-4099-a3ae-f4746fafa993" />
+
 ```text
 Local JSON File ➜ S3 Bucket ➜ Data Transformation (Python) ➜ PostgreSQL DB (Render)
               ⬆                                          ⬇

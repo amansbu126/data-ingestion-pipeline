@@ -37,4 +37,4 @@ def flatten_json_file(json_path):
 
     df = pd.DataFrame(rows)
     logger.info(f"✅ Flattened {len(df)} employee records from JSON")
-    return pd.DataFrame(df)
+    return df  # <-- Fixed this line

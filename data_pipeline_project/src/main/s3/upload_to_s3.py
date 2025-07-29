@@ -1,14 +1,19 @@
+from configparser import ConfigParser
 import boto3
 import os
-import shutil
-from datetime import datetime
 from loguru import logger
+from datetime import datetime
 
 
 class S3Uploader:
-    def __init__(self, bucket_name):
+    def __init__(self, aws_access_key_id, aws_secret_access_key, region_name, bucket_name):
         self.bucket_name = bucket_name
-        self.s3 = boto3.client("s3")
+        self.s3 = boto3.client(
+            "s3",
+            aws_access_key_id=aws_access_key_id,
+            aws_secret_access_key=aws_secret_access_key,
+            region_name=region_name
+        )
 
     def upload_file(self, local_path, s3_key):
         try:
@@ -18,18 +23,22 @@ class S3Uploader:
             logger.error(f"❌ Failed to upload file to S3: {e}")
             raise
 
-
 def upload_file(config):
-    source_path = os.path.abspath("data_uploads/json_files/data.json")
-    archive_dir = os.path.abspath("data_uploads/archive")
-    os.makedirs(archive_dir, exist_ok=True)
+    # 🗂️ Read local JSON file path from config
+    json_path = config["local"]["json_file_path"]
 
+    # 🕒 Create S3 key with timestamp
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    archive_file = os.path.join(archive_dir, f"data_{timestamp}.json")
+    s3_key_prefix = config["aws"].get("s3_key_prefix", "")
+    s3_key = os.path.join(s3_key_prefix, f"data_{timestamp}.json")
 
-    try:
-        shutil.copy2(source_path, archive_file)
-        logger.info(f"📁 Archived JSON to: {archive_file}")
-    except Exception as e:
-        logger.error(f"❌ Failed to archive JSON file: {e}")
-        raise
+    # ☁️ Upload file
+    uploader = S3Uploader(
+        aws_access_key_id=config["aws"]["aws_access_key_id"],
+        aws_secret_access_key=config["aws"]["aws_secret_access_key"],
+        region_name=config["aws"]["region_name"],
+        bucket_name=config["aws"]["bucket_name"]
+    )
+    uploader.upload_file(json_path, s3_key)
+
+    return s3_key  # ✅ Return the key for XCom

@@ -1,0 +1,51 @@
+{
+  "company": "TechNova Inc",
+  "location": "Bangalore",
+  "departments": {
+    "Engineering": {
+      "manager": "Alice",
+      "employees": {
+        "E101": {
+          "name": "Rahul Sharma",
+          "role": "Backend Developer",
+          "skills": ["Python", "Django", "PostgreSQL"],
+          "projects": [
+            {
+              "name": "Inventory System",
+              "status": "Completed"
+            },
+            {
+              "name": "Order API",
+              "status": "Ongoing"
+            }
+          ]
+        },
+        "E102": {
+          "name": "Priya Raj",
+          "role": "Frontend Developer",
+          "skills": ["React", "CSS", "Figma"],
+          "projects": [
+            {
+              "name": "Customer Portal",
+              "status": "Completed"
+            }
+          ]
+        }
+      }
+    },
+    "Marketing": {
+      "manager": "David",
+      "employees": {
+        "M201": {
+          "name": "Kiran Desai",
+          "role": "SEO Analyst",
+          "skills": ["Google Analytics", "Content Strategy"],
+          "campaigns": {
+            "Q1": "Lead Gen Campaign",
+            "Q2": "Brand Awareness"
+          }
+        }
+      }
+    }
+  }
+}

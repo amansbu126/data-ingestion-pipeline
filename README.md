@@ -153,8 +153,8 @@ This project is part of my portfolio showcasing real-world data engineering skil
 
 Feel free to explore, clone, or reach out for collaboration or feedback.
 
-📧 [Your Email]
+📧 [amansept22@gmail.com]
 
-🔗 [LinkedIn Profile]
+🔗 [https://www.linkedin.com/in/amankumarthebiexpert/]
 
-🌍 [Portfolio or Blog]
+🌍 [https://amankumarbiexpert.my.canva.site/-resume-website]

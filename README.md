@@ -111,17 +111,37 @@ Database connection strings
 ```text
 .
 ├── dags/
-│   └── data_ingestion_dag.py      # Airflow DAG file
+│   └── data_ingestion_dag.py      # Airflow DAG to orchestrate the data ingestion pipeline
+│   └── debug_check_file.py        # Script for local debugging or DAG validation
+│
 ├── data_uploads/
-│   └── sample_data.json           # Sample raw data
+│   └── sample_data.json           # Sample raw JSON file used for testing the pipeline
+│
+├── resources/
+│   └── config_file.ini            # Configuration file with environment variables or connection settings
+│
 ├── src/
-│   ├── config/
-│   │   └── config.ini             # Credentials and settings
-│   ├── s3_utils.py                # Upload & download functions using boto3
-│   ├── transform.py               # JSON transformation logic
-│   ├── db_handler.py              # DB connection and table handling logic
-│   └── logger.py                  # Custom Python logger
-├── README.md                      # Documentation
+│   ├── dags/
+│   │   └── json_ingestion_dag.py  # Object-oriented implementation of the ingestion DAG logic
+│   │
+│   ├── main/
+│   │   ├── db/
+│   │   │   └── load_json_to_rds.py       # Loads transformed JSON data into an RDS table
+│   │   │   └── rds_connector.py          # Establishes connection to RDS using SQLAlchemy or psycopg2
+│   │   │   └── rds_table_manager.py      # Creates or manages RDS tables (DDL operations)
+│   │   │
+│   │   ├── s3/
+│   │   │   └── upload_to_s3.py           # Handles uploading raw or transformed data to Amazon S3
+│   │   │
+│   │   ├── utils/
+│   │   │   └── flatten_json.py           # Utility script to flatten nested JSON structures for easier loading
+│   │   │
+│   │   └── main.py                       # Main orchestrator script (optional CLI entry point or test runner)
+│   │
+│   ├── test/                             # (To be populated) Unit tests for individual components and modules
+│
+├── README.md                      # Project overview, setup instructions, and pipeline architecture
+
 ```
 
 ---
